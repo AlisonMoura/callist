@@ -7,6 +7,11 @@ import javax.persistence.Persistence;
 
 /**
  * Created by alisonmoura on 13/07/15.
+ *
+ * Classe para gerenciar as entregas dos entityManager's
+ *
+ * @author alisonmoura
+ *
  */
 public class JpaUtil {
 
@@ -25,6 +30,13 @@ public class JpaUtil {
     private static EntityManagerFactory entityManagerFactory;
 
     //Metodo para pegar o entityManager
+
+    /**
+     *
+     * @exception
+     *
+     * @return EntityManager entityManager
+     */
     public static EntityManager getEntityManager(){
 
         //Se o entityManagerFactory está nulo, então istancia ele

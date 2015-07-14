@@ -19,7 +19,7 @@ public class Usuario {
     }
 
 
-    @SequenceGenerator(name = "seq_usuario", initialValue = 1,sequenceName = "seq_usuario")
+    @SequenceGenerator(name = "seq_usuario", initialValue = 1,sequenceName = "seq_usuario",allocationSize = 50)
     @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "seq_usuario")
     @Id
     private Integer id;
