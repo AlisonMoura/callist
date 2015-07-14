@@ -7,7 +7,7 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
     <persistence-unit name="CALLIST" transaction-type="RESOURCE_LOCAL">
 
-        <!-- Quem implementa a espedificação JPA -->
+        <!-- Quem implementa a especificação JPA -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Mapeia a classe Usuario -->
