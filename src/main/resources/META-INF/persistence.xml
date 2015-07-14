@@ -8,13 +8,16 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
     <persistence-unit name="CALLIST" transaction-type="RESOURCE_LOCAL">
 
         <!-- Quem implementa a espedificação JPA -->
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <!-- Mapeia a classe Usuario -->
+        <class>com.redick.persistencia.entidade.Usuario</class>
 
         <!-- Faz com que as classes que não são listadas nesse arquivo de persistencia serão excluídas -->
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
 
         <properties>
-
+            
             <property name="javax.persistence.jdbc.driver"
                       value="org.postgresql.Driver"/>
 
