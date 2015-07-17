@@ -11,6 +11,8 @@ import javax.persistence.*;
  *
  */
 
+//@NamedQuery(name = "", query = "")
+
 @Entity
 public class Usuario {
 
@@ -31,7 +33,7 @@ public class Usuario {
         return id;
     }
 
-    private void setId(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
