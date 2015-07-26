@@ -1,5 +1,7 @@
 package com.redick.persistencia.entitymanager;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -13,6 +15,8 @@ import javax.persistence.Persistence;
  * @author alisonmoura
  *
  */
+
+@Component
 public class JpaUtil {
 
     //Construtor

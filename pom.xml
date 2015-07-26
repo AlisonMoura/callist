@@ -17,6 +17,7 @@
     <servlet-api.version>3.1.0</servlet-api.version>
     <postgres-driver.version>9.1-901-1.jdbc4</postgres-driver.version>
     <spring.version>4.1.7.RELEASE</spring.version>
+    <apache-commons.version>1.4</apache-commons.version>
 
   </properties>
 
@@ -51,10 +52,38 @@
       <version>${hibernate.version}</version>
     </dependency>
 
+    <!-- Apache Commons DBCP -->
+    <dependency>
+      <groupId>commons-dbcp</groupId>
+      <artifactId>commons-dbcp</artifactId>
+      <version>${apache-commons.version}</version>
+    </dependency>
+
     <!-- Spring Context -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!-- Spring Test -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!-- Spring Object Relational Mapping -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>${spring.version}</version>
+    </dependency>
+
+    <!-- Spring Transaction -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-tx</artifactId>
       <version>${spring.version}</version>
     </dependency>
 
