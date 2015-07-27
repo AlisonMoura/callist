@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 import java.util.Collection;
 
 /**
@@ -24,12 +26,15 @@ public class TesteUsuarioDAO {
     @PersistenceContext
     EntityManager entityManager;
 
-    public Usuario getUsuario(){
+    @Autowired
+    UsuarioDAO dao;
+
+    public Usuario getUsuario() {
 
         Usuario usu = new Usuario();
 
-        usu.setNome("Siclano");
-        usu.setLogin("sisi");
+        usu.setNome("Alison");
+        usu.setLogin("alison");
         usu.setSenha("123");
 
         return usu;
@@ -42,29 +47,37 @@ public class TesteUsuarioDAO {
 
         Usuario usu = getUsuario();
 
+        entityManager.merge(usu);
+
+    }
+
+    @Test
+    @Transactional
+    public void testeAutenticar() {
+
+        Usuario usu = getUsuario();
+        Usuario usuRetorno = null;
+
+        String sql = "select Usuario from Usuario as usu where usu.login = :pLogin and usu.senha = :pSenha";
+
         try {
 
+//            //Cria uma TypedQuery
+//            TypedQuery<Usuario> query = entityManager.createQuery(sql, Usuario.class);
 
-            entityManager.merge(usu);
+            Query query = entityManager.createQuery(sql);
 
+            //Seta os parametros da query
+            query.setParameter("pLogin", usu.getLogin());
+            query.setParameter("pSenha", usu.getSenha());
+            //Pega o objeto de retorno
+            usuRetorno = (Usuario) query.getSingleResult();
 
         } catch (Exception e) {
-
+            //imprime a excessão na tela
             e.printStackTrace();
-
-            if (entityManager.getTransaction().isActive() || entityManager.isOpen()) {
-
-                entityManager.getTransaction().rollback();
-
-            }
-
-        } finally {
-
-            if (entityManager.isOpen()) {
-                entityManager.close();
-            }
-
         }
+
 
     }
 

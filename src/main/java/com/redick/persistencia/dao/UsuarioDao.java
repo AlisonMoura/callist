@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
+import javax.persistence.*;
 import javax.transaction.Transactional;
 
 /**
@@ -17,41 +17,32 @@ import javax.transaction.Transactional;
 public class UsuarioDAO {
 
     //Pega o EntityManager
-    private EntityManager entityManager = JpaUtil.getEntityManager();
+    @PersistenceContext
+    private EntityManager entityManager;
 
-    public UsuarioDAO(){
+    public UsuarioDAO() {
 
     }
 
     @Transactional
-    public void salvar(Usuario usu){
+    public void salvar(Usuario usu) {
 
-        try {
-
-            entityManager.getTransaction().begin();
-
-            entityManager.merge(usu);
-
-            entityManager.getTransaction().commit();
-
-        }catch (Exception e){
-
-            e.printStackTrace();
-
-            if(entityManager.getTransaction().isActive() || entityManager.isOpen()){
-
-                entityManager.getTransaction().rollback();
-
-            }
-
-        }finally {
-
-            if(entityManager.isOpen()){
-                entityManager.close();
-            }
-
-        }
+        //pede ao entityManager fazer um merge no usuário de parâmetro
+        entityManager.merge(usu);
 
     }
+
+    public Usuario autenticar(Usuario usu) throws NoResultException{
+
+            Query consulta = entityManager.createQuery("Select u from Usuario u where u.login=:pLogin and u.senha=:pSenha");
+
+            consulta.setParameter("pLogin", usu.getLogin());
+            consulta.setParameter("pSenha", usu.getSenha());
+            consulta.setMaxResults(1);
+
+            return (Usuario) consulta.getSingleResult();
+
+    }
+
 
 }
