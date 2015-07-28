@@ -12,11 +12,28 @@
 </head>
 <body>
 
-<form action="logar" method="post" style="margin: auto">
-  <label for="inptLogin">Login: </label><input type="text" name="login" id="inptLogin"/>
-  <label for="inptSenha">Senha: </label> <input type="password" name="senha" id="inptSenha"/>
-  <input type="submit" value="Login"/>
-</form>
+<% String msg = (String) request.getAttribute("msg"); %>
+
+<% if (msg != null && !msg.isEmpty()) { %>
+
+<div>
+    <h4><%= msg %></h4>
+</div>
+
+<%}%>
+
+<div style="margin: auto; width: 200px;">
+
+    <h1 style="text-align: center">LOGE-SE</h1>
+
+    <form action="logar" method="post" style="margin: 100px auto auto auto;">
+        <fieldset>
+            <label for="inptLogin">Login: </label><input type="text" name="login" id="inptLogin"/><br/>
+            <label for="inptSenha">Senha: </label> <input type="password" name="senha" id="inptSenha"/><br/>
+            <input type="submit" value="Login" style="margin: auto"/>
+        </fieldset>
+    </form>
+</div>
 
 </body>
 </html>

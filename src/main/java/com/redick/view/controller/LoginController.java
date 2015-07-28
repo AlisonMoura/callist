@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.PostConstruct;
 import javax.persistence.NoResultException;
 import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -34,7 +35,7 @@ public class LoginController {
 
 
     @RequestMapping(value = "/logar", method = RequestMethod.POST, params = {"login", "senha"})
-    public String login(@RequestParam String login, @RequestParam String senha) {
+    public String login(@RequestParam String login, @RequestParam String senha, HttpServletRequest request) {
 
         System.out.println("Login: " + login + "\nSenha: " + senha + "\n\n\n");
 
@@ -65,8 +66,11 @@ public class LoginController {
             //Coloca a mensagem no request
             msg = "Usuário não encontrado!";
 
+            //Coloca a mensagem no request
+            request.setAttribute("msg",msg);
+
             //redireciona para o login.jsp
-            return "redirect:login.jsp";
+            return "forward:login.jsp";
         }
 
     }
