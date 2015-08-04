@@ -21,8 +21,7 @@ public class Usuario {
     }
 
 
-    @SequenceGenerator(name = "seq_usuario", initialValue = 1,sequenceName = "seq_usuario",allocationSize = 50)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE , generator = "seq_usuario")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Integer id;
     private String nome;

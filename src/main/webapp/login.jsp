@@ -26,7 +26,7 @@
 
     <h1 style="text-align: center">LOGE-SE</h1>
 
-    <form action="logar" method="post" style="margin: 100px auto auto auto;">
+    <form action="/login" method="post" style="margin: 100px auto auto auto;">
         <fieldset>
             <label for="inptLogin">Login: </label><input type="text" name="login" id="inptLogin"/><br/>
             <label for="inptSenha">Senha: </label> <input type="password" name="senha" id="inptSenha"/><br/>

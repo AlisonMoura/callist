@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<%@ include file="../includes/menu.jsp" %>
+<%@ include file="../../includes/menu.jsp" %>
 
 <h1>Olá mundo!</h1>
 

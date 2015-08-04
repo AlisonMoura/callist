@@ -34,8 +34,8 @@ public class LoginController {
     }
 
 
-    @RequestMapping(value = "/logar", method = RequestMethod.POST, params = {"login", "senha"})
-    public String login(@RequestParam String login, @RequestParam String senha, HttpServletRequest request) {
+    @RequestMapping(value = "/login", method = RequestMethod.POST, params = {"login", "senha"})
+    public String login(@RequestParam String login, @RequestParam String senha, HttpServletRequest request, HttpSession session) {
 
         System.out.println("Login: " + login + "\nSenha: " + senha + "\n\n\n");
 
@@ -55,8 +55,11 @@ public class LoginController {
             System.out.println("Imprimindo o Usuário: ");
             System.out.println(usuAutenticado.toString());
 
+            //Colocando o usuario autenticado na sessão que o spring já me fornece
+            session.setAttribute("usuario", usuAutenticado);
+
             //redireciona para a página principal
-            return "redirect:/public/index.jsp";
+            return "index";
 
         }catch (NoResultException e){
 
@@ -73,6 +76,16 @@ public class LoginController {
             return "forward:login.jsp";
         }
 
+    }
+
+    @RequestMapping("/logout")
+    public String logout(HttpSession session){
+
+        //Verifica se a sessão não está nula, antes de invalidadá-la
+        if(session!=null){
+            session.invalidate();
+        }
+        return "redirect:login.jsp";
     }
 
 }

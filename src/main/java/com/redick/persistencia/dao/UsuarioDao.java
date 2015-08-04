@@ -1,13 +1,11 @@
 package com.redick.persistencia.dao;
 
 import com.redick.persistencia.entidade.Usuario;
-import com.redick.persistencia.entitymanager.JpaUtil;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
 import javax.transaction.Transactional;
+import java.util.List;
 
 /**
  * Created by alisonmoura on 19/07/15.
@@ -44,5 +42,12 @@ public class UsuarioDAO {
 
     }
 
+    public List<Usuario> buscarTodos() throws NoResultException{
+
+        Query query = entityManager.createQuery("Select usu from Usuario as usu");
+        List<Usuario> lista = (List<Usuario>) query.getResultList();
+
+        return lista;
+    }
 
 }

@@ -8,8 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <nav>
 
-  <a href="#">Home</a>
+  <a href="/home">Home</a>
+  <a href="/usuario/formusu">Cadastro de usuário</a>
   <a href="/usuario/lista-usuarios">Lista de usuários</a>
-  <a href="#">Sair</a>
+  <a href="/aluno/lista-alunos">Lista de alunos</a>
+  <a href="/logout">Sair</a>
 
 </nav>

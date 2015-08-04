@@ -16,8 +16,7 @@ public class Aluno {
     public Aluno() {
     }
 
-    @SequenceGenerator(name = "seq_aluno",initialValue = 1,sequenceName = "seq_aluno", allocationSize = 50)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_aluno")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Integer id;
     private String nome;
