@@ -1,6 +1,7 @@
 package com.redick.persistencia.entidade;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * Created by alisonmoura on 17/07/15.
@@ -9,14 +10,14 @@ import javax.persistence.*;
  *
  */
 @Entity
-public class Aluno {
-
+public class Aluno{
 
     //Construtor padrão para o JPA
     public Aluno() {
     }
 
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(name = "seq_aluno", sequenceName = "seq_aluno", initialValue = 1)
+    @GeneratedValue(generator = "seq_aluno" ,strategy = GenerationType.AUTO)
     @Id
     private Integer id;
     private String nome;
@@ -24,7 +25,7 @@ public class Aluno {
     private String rg;
     private String cpf;
     @Embedded
-    private Endereco endereco;
+    private Endereco endereco = new Endereco();
 
     /* Getters e Setters */
 
@@ -76,30 +77,13 @@ public class Aluno {
         this.endereco = endereco;
     }
 
-    /* HashCode e Equals */
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Aluno)) return false;
-
-        Aluno aluno = (Aluno) o;
-
-        if (getNome() != null ? !getNome().equals(aluno.getNome()) : aluno.getNome() != null) return false;
-        if (getIdade() != null ? !getIdade().equals(aluno.getIdade()) : aluno.getIdade() != null) return false;
-        if (getRg() != null ? !getRg().equals(aluno.getRg()) : aluno.getRg() != null) return false;
-        if (getCpf() != null ? !getCpf().equals(aluno.getCpf()) : aluno.getCpf() != null) return false;
-        return !(getEndereco() != null ? !getEndereco().equals(aluno.getEndereco()) : aluno.getEndereco() != null);
-
+    /**
+     * Método que deixa todos os atributos da instancia vazios e não nulos
+     */
+    public void reset(){
+        this.nome = "";
+        this.cpf = "";
+        this.rg = "";
     }
 
-    @Override
-    public int hashCode() {
-        int result = getNome() != null ? getNome().hashCode() : 0;
-        result = 31 * result + (getIdade() != null ? getIdade().hashCode() : 0);
-        result = 31 * result + (getRg() != null ? getRg().hashCode() : 0);
-        result = 31 * result + (getCpf() != null ? getCpf().hashCode() : 0);
-        result = 31 * result + (getEndereco() != null ? getEndereco().hashCode() : 0);
-        return result;
-    }
 }

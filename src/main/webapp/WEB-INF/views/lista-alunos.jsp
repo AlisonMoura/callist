@@ -20,6 +20,16 @@
 <%--Fazendo o include do menu--%>
 <%@ include file="../../includes/menu.jsp" %>
 
+<% String msg = (String) request.getAttribute("msg"); %>
+
+<% if (msg != null && !msg.isEmpty()) { %>
+
+<div>
+    <h4><%= msg %></h4>
+</div>
+
+<%}%>
+
 <h1 style="text-align: center;">Lista de Alunos</h1>
 
 <br/><br/><br/>
@@ -50,6 +60,10 @@
 
     </tbody>
 </table>
+
+<% }else { %>
+
+<h2 style="text-align: center">Não há alunos cadastrados</h2>
 
 <% } %>
 </body>

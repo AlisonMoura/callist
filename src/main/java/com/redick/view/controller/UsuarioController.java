@@ -39,7 +39,7 @@ public class UsuarioController extends HttpServlet {
 
     }
 
-    @RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
+    @RequestMapping(value = "/salvar", method = RequestMethod.POST)
     public String cadastrar(Usuario usuario) {
 
         if (usuario != null) {
@@ -50,11 +50,11 @@ public class UsuarioController extends HttpServlet {
             dao.salvar(usuario);
         }
 
-        return "forward:/WEB-INF/views/lista-usuarios.jsp";
+        return "redirect:/usuario/lista-usuarios";
     }
 
 
-    @RequestMapping(value = "/formusu",method = RequestMethod.GET)
+    @RequestMapping(value = "/novo",method = RequestMethod.GET)
     public String formusu(){
 
         return "formusu";

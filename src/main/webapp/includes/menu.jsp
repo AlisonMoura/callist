@@ -9,8 +9,9 @@
 <nav>
 
   <a href="/home">Home</a>
-  <a href="/usuario/formusu">Cadastro de usuário</a>
+  <a href="/usuario/novo">Cadastro de usuário</a>
   <a href="/usuario/lista-usuarios">Lista de usuários</a>
+  <a href="/aluno/novo">Cadastro de aluno</a>
   <a href="/aluno/lista-alunos">Lista de alunos</a>
   <a href="/logout">Sair</a>
 

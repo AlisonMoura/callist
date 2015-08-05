@@ -78,4 +78,16 @@ public class Endereco {
         this.numero = numero;
     }
 
+    /**
+     * Método que deixa todos os atributos do tipo String da instancia vazios e não nulos
+     */
+    public void reset(){
+        this.cep = "";
+        this.estado = "";
+        this.cidade = "";
+        this.bairro = "";
+        this.tipoLogradouro = "";
+        this.logradouro = "";
+    }
+
 }

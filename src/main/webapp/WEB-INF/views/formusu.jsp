@@ -13,7 +13,7 @@
 <body>
 <%@ include file="../../includes/menu.jsp" %>
 
-<form action="/usuario/cadastrar" method="post" style="width: 200px; margin: 100px auto auto auto;">
+<form action="/usuario/salvar" method="post" style="width: 200px; margin: 100px auto auto auto;">
   <fieldset legend="Dados do usuário">
 
     <label for="inptNome">Nome: </label>

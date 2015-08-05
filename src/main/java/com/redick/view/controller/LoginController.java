@@ -37,8 +37,6 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.POST, params = {"login", "senha"})
     public String login(@RequestParam String login, @RequestParam String senha, HttpServletRequest request, HttpSession session) {
 
-        System.out.println("Login: " + login + "\nSenha: " + senha + "\n\n\n");
-
         //Instancia e seta o login e a senha no usuarioAutenticar a ser autenticado pelo UsuarioDAO
         Usuario usuAutenticar = new Usuario();
         usuAutenticar.setLogin(login);

@@ -1,3 +1,4 @@
+<%@ page import="com.redick.persistencia.entidade.Usuario" %>
 <%--
   Created by IntelliJ IDEA.
   User: alisonmoura
@@ -13,9 +14,11 @@
 </head>
 <body>
 
+<% Usuario usuarioLogado = (Usuario) session.getAttribute("usuario"); %>
+
 <%@ include file="../../includes/menu.jsp" %>
 
-<h1>Olá mundo!</h1>
+<h1>Olá <%= usuarioLogado.getNome()%>!</h1>
 
 </body>
 </html>
