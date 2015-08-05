@@ -1,8 +1,5 @@
 package com.redick.persistencia.entidade;
 
-import org.hibernate.annotations.CollectionType;
-import org.hibernate.annotations.Fetch;
-
 import javax.persistence.*;
 import java.util.List;
 

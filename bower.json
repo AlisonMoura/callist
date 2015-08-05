@@ -1,0 +1,17 @@
+{
+  "name": "callist",
+  "version": "1.0.0",
+  "homepage": "https://github.com/AlisonMoura/callist",
+  "authors": ["alison.oghino@gmail.com"],
+  "description": "Um sistema para controle de presenças de alunos",
+  "directory":"src/main/webapp/WEB-INF/resources/bower_components""
+  "license": "Alison Moura",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

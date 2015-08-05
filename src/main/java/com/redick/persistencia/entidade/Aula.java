@@ -9,6 +9,8 @@ import javax.persistence.*;
 @Entity
 public class Aula {
 
+
+
     @SequenceGenerator(name = "seq_aula", sequenceName = "seq_aula", initialValue = 1)
     @GeneratedValue(generator = "seq_aula", strategy = GenerationType.AUTO)
     @Id
