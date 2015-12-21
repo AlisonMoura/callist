@@ -35,13 +35,10 @@ public class AlunoController {
     @RequestMapping(value = "/salvar", method = RequestMethod.POST)
     public String salvarAluno(Aluno aluno, HttpServletRequest request) {
 
-        //Salva o aluno
         dao.salvar(aluno);
 
-        //Mensagem para a tela
         String msg = "Salvo com sucesso!";
 
-        //Colocando a mensagem no request
         request.setAttribute("msg", msg);
 
         return "forward:/aluno/lista-alunos";
@@ -50,13 +47,10 @@ public class AlunoController {
     @RequestMapping(value = "/lista-alunos")
     public String listarAlunos(HttpServletRequest request) {
 
-        //Pegar a lista de alunos no banco de dados
         List<Aluno> listaAlunos = dao.buscarTodos();
 
-        //Colocar a lista no request
         request.setAttribute("listaalunos", listaAlunos);
 
-        //Leva para a página de listar alunos
         return "forward:/WEB-INF/views/lista-alunos.jsp";
     }
 
