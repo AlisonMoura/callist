@@ -14,7 +14,6 @@ import java.util.List;
 @Repository
 public class UsuarioDAO {
 
-    //Pega o EntityManager
     @PersistenceContext
     private EntityManager entityManager;
 
@@ -25,24 +24,23 @@ public class UsuarioDAO {
     @Transactional
     public void salvar(Usuario usu) {
 
-        //pede ao entityManager fazer um merge no usuário de parâmetro
         entityManager.merge(usu);
 
     }
 
-    public Usuario autenticar(Usuario usu) throws NoResultException{
+    public Usuario autenticar(Usuario usu) throws NoResultException {
 
-            Query consulta = entityManager.createQuery("Select u from Usuario u where u.login=:pLogin and u.senha=:pSenha");
+        Query consulta = entityManager.createQuery("Select u from Usuario u where u.login=:pLogin and u.senha=:pSenha");
 
-            consulta.setParameter("pLogin", usu.getLogin());
-            consulta.setParameter("pSenha", usu.getSenha());
-            consulta.setMaxResults(1);
+        consulta.setParameter("pLogin", usu.getLogin());
+        consulta.setParameter("pSenha", usu.getSenha());
+        consulta.setMaxResults(1);
 
-            return (Usuario) consulta.getSingleResult();
+        return (Usuario) consulta.getSingleResult();
 
     }
 
-    public List<Usuario> buscarTodos() throws NoResultException{
+    public List<Usuario> buscarTodos() throws NoResultException {
 
         Query query = entityManager.createQuery("Select usu from Usuario as usu");
         List<Usuario> lista = (List<Usuario>) query.getResultList();

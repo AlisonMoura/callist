@@ -29,10 +29,8 @@ public class UsuarioController extends HttpServlet {
     @RequestMapping("/lista-usuarios")
     public String listar(HttpServletRequest request) {
 
-        //Pega a lista de usuários pelo DAO
         List<UsuarioDAO> listaUsu = (List) dao.buscarTodos();
 
-        //Coloca a lista no Request
         request.setAttribute("listausuarios", listaUsu);
 
         return "forward:/WEB-INF/views/lista-usuarios.jsp";
@@ -54,8 +52,8 @@ public class UsuarioController extends HttpServlet {
     }
 
 
-    @RequestMapping(value = "/novo",method = RequestMethod.GET)
-    public String formusu(){
+    @RequestMapping(value = "/novo", method = RequestMethod.GET)
+    public String formusu() {
 
         return "formusu";
     }
