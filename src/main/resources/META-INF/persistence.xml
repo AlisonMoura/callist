@@ -30,36 +30,37 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
             <!-- Início das configurações do JPA -->
 
             <!-- Indica qual é o Driver de conexão com o DB -->
-            <!--<property name="javax.persistence.jdbc.driver"-->
-                      <!--value="org.postgresql.Driver"/>-->
+            <property name="javax.persistence.jdbc.driver"
+                      value="org.postgresql.Driver"/>
 
             <!-- Indica qual é a url do banco utilizado -->
-            <!--<property name="javax.persistence.jdbc.url"-->
-                      <!--value="jdbc:postgresql://localhost:5432/callist"/>-->
+            <property name="javax.persistence.jdbc.url"
+                      value="jdbc:postgresql://localhost:5433/callist"/>
 
             <!-- Indica qual é o usuário do banco -->
-            <!--<property name="javax.persistence.jdbc.user"-->
-                      <!--value="postgres"/>-->
+            <property name="javax.persistence.jdbc.user"
+                      value="postgres"/>
 
             <!-- Indica qual é a senha do banco -->
-            <!--<property name="javax.persistence.jdbc.password"-->
-                      <!--value="postgres"/>-->
+
+            <property name="javax.persistence.jdbc.password"
+                      value="postgres"/>
 
             <!-- Fim das configurações do JPA -->
 
             <!-- Início das configurações do Hibernate -->
-            
+
             <!-- Define o dialeto que o Hibernate vai usar -->
-            <property name="hibernate.dialetc" value="org.hibernate.dialect.PostgreSQL9Dialect" />
+            <property name="hibernate.dialetc" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
 
             <!-- Habilita o Hibernate criar as tabelas no banco de dados -->
-            <property name="hibernate.hbm2ddl.auto" value="update" />
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
 
             <!-- Faz o Hibernate exibir os sql das consultas feitas por ele -->
-            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.show_sql" value="true"/>
 
             <!-- Formata (visualmente) os sql das consultas -->
-            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.format_sql" value="true"/>
 
             <!-- Fim das configurações do Hibernate -->
 
