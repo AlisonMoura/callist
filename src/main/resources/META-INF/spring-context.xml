@@ -14,34 +14,33 @@
     <context:component-scan base-package="com.redick.view"/>
 
     <!--Importa a configuração do Spring MVC-->
-    <import resource="spring-mvc.xml" />
+    <import resource="spring-mvc.xml"/>
 
     <!-- rastreando o classes do contexto do Spring -->
     <!--<bean id="UsuarioController" class="com.redick.view.controller.UsuarioController"/>-->
     <!--<bean id="UsuarioDAO" class="com.redick.persistencia.dao.UsuarioDAO"/>-->
 
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
-        <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://localhost:5432/callist"/>
-        <property name="username" value="postgres"/>
-        <property name="password" value="postgres"/>
-    </bean>
+    <!--<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">-->
+    <!--<property name="driverClassName" value="org.postgresql.Driver"/>-->
+    <!--<property name="url" value="jdbc:postgresql://localhost:5432/callist"/>-->
+    <!--<property name="username" value="postgres"/>-->
+    <!--<property name="password" value="postgres"/>-->
+    <!--</bean>-->
 
-    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-        <constructor-arg ref="dataSource"/>
-    </bean>
+    <!--<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">-->
+    <!--<constructor-arg ref="dataSource"/>-->
+    <!--</bean>-->
 
-    <bean id="hibernateJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-        <!-- <property name="generateDdl" value="${hibernate.generate_ddl}"/>
-         <property name="showSql" value="${hibernate.show_sql}" />
-         <property name="databasePlatform" value="${hibernate.dialect}" />-->
-    </bean>
+    <!--<bean id="hibernateJpaVendorAdapter" class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">-->
+    <!--&lt;!&ndash;<property name="dataSource" ref="dataSource"/>&ndash;&gt;-->
+    <!--</bean>-->
 
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter"/>
-        <property name="persistenceUnitName" value="CALLIST"/>
+        <!--<property name="dataSource" ref="dataSource"/>-->
+        <!--<property name="jpaVendorAdapter" ref="hibernateJpaVendorAdapter"/>-->
+        <property name="persistenceXmlLocation" value="classpath:META-INF/persistence.xml"/>
+        <!--<property name="persistenceUnitName" value="CALLIST"/>-->
     </bean>
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">

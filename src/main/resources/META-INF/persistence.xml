@@ -37,7 +37,7 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
             <!-- Indica qual é a senha do banco -->
             <property name="javax.persistence.jdbc.password"
-                      value="postgres"/>
+                      value="alison"/>
 
             <!-- Fim das configurações do JPA -->
 
