@@ -14,6 +14,12 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
         <class>com.redick.persistencia.entidade.Usuario</class>
         <class>com.redick.persistencia.entidade.Aluno</class>
         <class>com.redick.persistencia.entidade.Endereco</class>
+        <class>com.redick.persistencia.entidade.Curso</class>
+        <class>com.redick.persistencia.entidade.Aula</class>
+        <class>com.redick.persistencia.entidade.AulaAluno</class>
+        <class>com.redick.persistencia.entidade.AlunoCurso</class>
+        <class>com.redick.persistencia.entidade.Modulo</class>
+        <class>com.redick.persistencia.entidade.Turma</class>
 
         <!-- Faz com que as classes que não são listadas nesse arquivo de persistencia serão excluídas -->
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
@@ -24,20 +30,20 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
             <!-- Início das configurações do JPA -->
 
             <!-- Indica qual é o Driver de conexão com o DB -->
-            <property name="javax.persistence.jdbc.driver"
-                      value="org.postgresql.Driver"/>
+            <!--<property name="javax.persistence.jdbc.driver"-->
+                      <!--value="org.postgresql.Driver"/>-->
 
             <!-- Indica qual é a url do banco utilizado -->
-            <property name="javax.persistence.jdbc.url"
-                      value="jdbc:postgresql://localhost:5432/callist"/>
+            <!--<property name="javax.persistence.jdbc.url"-->
+                      <!--value="jdbc:postgresql://localhost:5432/callist"/>-->
 
             <!-- Indica qual é o usuário do banco -->
-            <property name="javax.persistence.jdbc.user"
-                      value="postgres"/>
+            <!--<property name="javax.persistence.jdbc.user"-->
+                      <!--value="postgres"/>-->
 
             <!-- Indica qual é a senha do banco -->
-            <property name="javax.persistence.jdbc.password"
-                      value="postgres"/>
+            <!--<property name="javax.persistence.jdbc.password"-->
+                      <!--value="postgres"/>-->
 
             <!-- Fim das configurações do JPA -->
 

@@ -1,7 +1,6 @@
 package com.redick.persistencia.entidade;
 
 import javax.persistence.*;
-import java.util.List;
 
 /**
  * Created by alisonmoura on 04/08/15.
@@ -13,9 +12,13 @@ public class Curso {
     @GeneratedValue(generator = "seq_curso", strategy = GenerationType.AUTO)
     @Id
     private Integer id;
+    private String titulo;
 
-    @OneToMany
-    @JoinColumn
-    private List<Aula> aulas;
+    public String getTitulo() {
+        return titulo;
+    }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 }
