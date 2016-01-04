@@ -4,11 +4,6 @@
 <html>
 <head>
     <title>Cadastro de aluno</title>
-
-    <script type="text/javascript">
-
-    </script>
-
 </head>
 <body>
 
@@ -38,19 +33,19 @@
             <legend>Endereço</legend>
 
             CEP:
-            <input name="endereco.cep" type="text"/><br/>
+            <input id="cep" name="endereco.cep" type="text" onblur="buscarPorCep()"/><br/>
             Tipo do Logradouro:
-            <input name="endereco.tipoLogradouro" type="text"/><br/>
+            <input id="tipoLogradouro" name="endereco.tipoLogradouro" type="text"/><br/>
             Logradouro:
-            <input name="endereco.logradouro" type="text"/><br/>
+            <input id="logradouro" name="endereco.logradouro" type="text"/><br/>
             Número:
-            <input name="endereco.numero" type="number"><br/>
+            <input id="numero" name="endereco.numero" type="number"><br/>
             Estado:
-            <input name="endereco.estado" type="text"/><br/>
+            <input id="estado" name="endereco.estado" type="text"/><br/>
             Cidade:
-            <input name="endereco.cidade" type="text"/><br/>
+            <input id="cidade" name="endereco.cidade" type="text"/><br/>
             Bairro:
-            <input name="endereco.bairro" type="text"/><br/>
+            <input id="bairro" name="endereco.bairro" type="text"/><br/>
 
         </fieldset>
         <br/>
@@ -61,5 +56,20 @@
     </fieldset>
 </form>
 
+<script type="text/javascript">
+    function buscarPorCep(){
+        var xmlHttp = new XMLHttpRequest();
+        var cep = document.getElementById("cep").value;
+        var url = "https://viacep.com.br/ws/"+cep+"/json/";
+        xmlHttp.open( "GET", url , false ); // false for synchronous request
+        xmlHttp.send( null );
+        var endereco =  JSON.parse(xmlHttp.responseText);
+
+        document.getElementById("logradouro").value = endereco.logradouro;
+        document.getElementById("bairro").value = endereco.bairro;
+        document.getElementById("cidade").value = endereco.localidade;
+        document.getElementById("estado").value = endereco.uf;
+    }
+</script>
 </body>
 </html>

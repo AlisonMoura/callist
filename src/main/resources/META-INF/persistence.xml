@@ -35,7 +35,7 @@ http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
 
             <!-- Indica qual é a url do banco utilizado -->
             <property name="javax.persistence.jdbc.url"
-                      value="jdbc:postgresql://localhost:5433/callist"/>
+                      value="jdbc:postgresql://localhost:5432/callist"/>
 
             <!-- Indica qual é o usuário do banco -->
             <property name="javax.persistence.jdbc.user"

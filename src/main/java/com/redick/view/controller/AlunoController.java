@@ -5,6 +5,7 @@ import com.redick.persistencia.entidade.Aluno;
 import com.redick.persistencia.entidade.Endereco;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -37,9 +38,7 @@ public class AlunoController {
 
         dao.salvar(aluno);
 
-        String msg = "Salvo com sucesso!";
-
-        request.setAttribute("msg", msg);
+        request.setAttribute("msg", "Salvo com sucesso!");
 
         return "forward:/aluno/lista-alunos";
     }
@@ -53,5 +52,4 @@ public class AlunoController {
 
         return "forward:/WEB-INF/views/lista-alunos.jsp";
     }
-
 }
