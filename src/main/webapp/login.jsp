@@ -1,14 +1,9 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: alisonmoura
-  Date: 27/07/15
-  Time: 12:13
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="utf-8">
+    <link type="text/css" rel="stylesheet" href="css/reset.css">
+    <link type="text/css" rel="stylesheet" href="css/login.css">
     <title>Login - Callist</title>
 </head>
 <body>
@@ -17,22 +12,20 @@
 
 <% if (msg != null && !msg.isEmpty()) { %>
 
-<div>
+<div class="msg">
     <h4><%= msg %></h4>
 </div>
 
 <%}%>
 
-<div style="margin: auto; width: 200px;">
+<div class="form-login">
 
-    <h1 style="text-align: center">LOGIN</h1>
+    <h1>LOGIN</h1>
 
-    <form action="/login" method="post" style="margin: 100px auto auto auto;">
-        <fieldset>
-            <label for="inptLogin">Login: </label><input type="text" name="login" id="inptLogin"/><br/>
-            <label for="inptSenha">Senha: </label> <input type="password" name="senha" id="inptSenha"/><br/>
-            <input type="submit" value="Login" style="margin: auto"/>
-        </fieldset>
+    <form action="/login" method="post">
+        <input type="text" name="login" id="inptLogin" placeholder="usuário"/>
+        <input type="password" name="senha" id="inptSenha" placeholder="senha"/>
+        <input type="submit" value="Login"/>
     </form>
 </div>
 

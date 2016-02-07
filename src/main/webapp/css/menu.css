@@ -32,8 +32,8 @@
     text-decoration: none;
 }
 .nav-menu > ul > li > a:hover {
-    color: #90afc5;
-    border-bottom: solid 5px #90afc5;
+    color: #336b87;
+    border-bottom: solid 2px #336b87;
 }
 .nav-menu > ul > ul{
     list-style: none;

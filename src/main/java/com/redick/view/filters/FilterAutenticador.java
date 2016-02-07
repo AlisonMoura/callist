@@ -39,7 +39,7 @@ public class FilterAutenticador implements Filter {
         } else {
 
             //Faz a mensagem de erro
-            String msg = "Loge-se para continuar!";
+            String msg = "Logue-se para continuar!";
 
             //coloca a mensagem como atributo no request
             req.setAttribute("msg", msg);
