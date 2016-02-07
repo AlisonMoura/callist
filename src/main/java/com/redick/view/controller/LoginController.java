@@ -11,10 +11,6 @@ import javax.persistence.NoResultException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-/**
- * Created by alisonmoura on 26/07/15.
- */
-
 @Controller
 public class LoginController {
 

@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="utf-8">
     <title>Login - Callist</title>
 </head>
 <body>
@@ -24,7 +25,7 @@
 
 <div style="margin: auto; width: 200px;">
 
-    <h1 style="text-align: center">LOGE-SE</h1>
+    <h1 style="text-align: center">LOGIN</h1>
 
     <form action="/login" method="post" style="margin: 100px auto auto auto;">
         <fieldset>

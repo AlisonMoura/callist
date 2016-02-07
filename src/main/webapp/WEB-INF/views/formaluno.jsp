@@ -60,14 +60,15 @@
     function buscarPorCep(){
         var xmlHttp = new XMLHttpRequest();
         var cep = document.getElementById("cep").value;
-        var url = "https://viacep.com.br/ws/"+cep+"/json/";
+        var url = "http://cep.republicavirtual.com.br/web_cep.php?cep="+cep+"&formato=json";
         xmlHttp.open( "GET", url , false ); // false for synchronous request
         xmlHttp.send( null );
         var endereco =  JSON.parse(xmlHttp.responseText);
 
         document.getElementById("logradouro").value = endereco.logradouro;
+        document.getElementById("tipoLogradouro").value = endereco.tipo_logradouro;
         document.getElementById("bairro").value = endereco.bairro;
-        document.getElementById("cidade").value = endereco.localidade;
+        document.getElementById("cidade").value = endereco.cidade;
         document.getElementById("estado").value = endereco.uf;
     }
 </script>

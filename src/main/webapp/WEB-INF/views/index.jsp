@@ -10,11 +10,8 @@
 <html>
 <head>
     <title>Callist - Presença faz falta</title>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"/>
 </head>
 <body>
-
-<% Usuario usuarioLogado = (Usuario) session.getAttribute("usuario"); %>
 
 <%@ include file="../../includes/menu.jsp" %>
 
